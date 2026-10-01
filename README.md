@@ -5,12 +5,16 @@ Public support and privacy website for the **Enso Sudoku** mobile game
 required by the Apple App Store and Google Play Console, in English and
 Turkish.
 
+- **Developer:** Fatih Öztürkbay
+- **Support email:** [ensosudoku.support@gmail.com](mailto:ensosudoku.support@gmail.com)
+- **Repository:** [Ozturkbay/enso-sudoku-support](https://github.com/Ozturkbay/enso-sudoku-support)
+
 It is a plain static site: HTML and one CSS file. No framework, no build
 step, no JavaScript, no external fonts, scripts or stylesheets.
 
 ## URLs
 
-Hosted with GitHub Pages from `Ozturkbay/enso-sudoku-support`:
+Hosted with GitHub Pages from the `main` branch, repository root:
 
 | Page | URL |
 | --- | --- |
@@ -20,9 +24,9 @@ Hosted with GitHub Pages from `Ozturkbay/enso-sudoku-support`:
 | Support (EN) | https://ozturkbay.github.io/enso-sudoku-support/support/ |
 | Destek (TR) | https://ozturkbay.github.io/enso-sudoku-support/support/tr/ |
 
-Use the **Privacy Policy** URL for App Store Connect, the Play Console and
-the AdMob consent (UMP) message. Use the **Support** URL for App Store
-Connect's Support URL field.
+Use the **Privacy Policy (EN)** URL for App Store Connect, the Play Console
+and the AdMob consent (UMP) message. Use the **Support (EN)** URL for App
+Store Connect's Support URL field.
 
 ## Structure
 
@@ -58,41 +62,16 @@ python3 -m http.server 8000
 Then open http://localhost:8000/. (Opening the files directly with
 `file://` won't resolve the directory-style links such as `privacy/`.)
 
+To preview under the same `/enso-sudoku-support/` path GitHub Pages uses,
+serve the parent directory instead and open
+http://localhost:8000/enso-sudoku-support/.
+
 ## Publishing (GitHub Pages)
 
-1. Push `main` to `https://github.com/Ozturkbay/enso-sudoku-support`.
-2. In the repository on GitHub: **Settings → Pages → Build and deployment**,
-   set **Source** to *Deploy from a branch*, **Branch** to `main`, folder
-   `/ (root)`, and save.
-3. After the first deployment finishes, the URLs above are live.
-
-No custom domain and no `CNAME` file are used.
-
-## Replacing the support email placeholder
-
-The public support email has not been chosen yet. Every place that needs it
-uses this exact token:
-
-```
-SUPPORT_EMAIL_PLACEHOLDER
-```
-
-It appears in visible text and in `mailto:` links on every page. Once the
-address exists, replace it everywhere at once (macOS / BSD `sed`):
-
-```sh
-grep -rl "SUPPORT_EMAIL_PLACEHOLDER" --include='*.html' . \
-  | xargs sed -i '' 's/SUPPORT_EMAIL_PLACEHOLDER/support@example.com/g'
-```
-
-On Linux (GNU `sed`), use `sed -i` instead of `sed -i ''`. Replace
-`support@example.com` with the real address, then confirm nothing is left:
-
-```sh
-grep -rn "SUPPORT_EMAIL_PLACEHOLDER" . --exclude=README.md
-```
-
-(This README mentions the token on purpose; the command above excludes it.)
+Pages deploys automatically from `main` / `(root)` on every push. The
+setting lives at **Settings → Pages → Build and deployment → Deploy from a
+branch → `main` → `/ (root)`**. No custom domain and no `CNAME` file are
+used.
 
 ## Updating "Last updated"
 
@@ -102,14 +81,16 @@ The privacy policies show their date near the top:
 - `privacy/tr/index.html` — `Son güncelleme: 1 Ekim 2026`
 
 When the policy changes, edit both lines together and keep the English and
-Turkish texts aligned. Turkish month names: Ocak, Şubat, Mart, Nisan,
-Mayıs, Haziran, Temmuz, Ağustos, Eylül, Ekim, Kasım, Aralık.
+Turkish texts aligned section by section. Turkish month names: Ocak, Şubat,
+Mart, Nisan, Mayıs, Haziran, Temmuz, Ağustos, Eylül, Ekim, Kasım, Aralık.
 
 The policy describes what the app actually does (ads via Google AdMob,
-consent via Google UMP, the Remove Ads purchase, Game Center / Google Play
-Games, local reminders, local-only storage). If the app adds or removes an
-SDK, a permission, an account system, analytics or a server, update both
-privacy pages before releasing that version.
+consent via Google UMP, the Remove Ads purchase, optional Game Center /
+Google Play Games integration, local reminders, local storage that may be
+included in device backups). If the app adds or removes an SDK, a
+permission, an account system, analytics or a server — or once platform
+game services, the production consent messages or the store age ratings are
+finalized — review both privacy pages before releasing that version.
 
 ## App icon
 
@@ -122,7 +103,9 @@ source files were not modified, and nothing is hotlinked.
 
 ## Privacy of this website
 
-This website sets no cookies, has no analytics, no tracking scripts, no
-third-party fonts, scripts or stylesheets, and contains no JavaScript.
-GitHub Pages, as the host, may process technical data such as IP addresses
-to serve and secure the site (see the GitHub Privacy Statement).
+This website contains no first-party analytics or tracking code: its own
+code sets no cookies, uses no analytics, tracking scripts or marketing
+pixels, loads no third-party fonts, scripts or stylesheets, and contains no
+JavaScript. It is hosted on GitHub Pages; see the
+[GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
+for how GitHub handles data.
