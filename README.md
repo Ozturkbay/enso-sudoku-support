@@ -77,8 +77,8 @@ used.
 
 The privacy policies show their date near the top:
 
-- `privacy/index.html` — `Last updated: October 1, 2026`
-- `privacy/tr/index.html` — `Son güncelleme: 1 Ekim 2026`
+- `privacy/index.html` — `Last updated: October 9, 2026`
+- `privacy/tr/index.html` — `Son güncelleme: 9 Ekim 2026`
 
 When the policy changes, edit both lines together and keep the English and
 Turkish texts aligned section by section. Turkish month names: Ocak, Şubat,
@@ -89,8 +89,9 @@ consent via Google UMP, the Remove Ads purchase, optional Game Center /
 Google Play Games integration, local reminders, local storage that may be
 included in device backups). If the app adds or removes an SDK, a
 permission, an account system, analytics or a server — or once platform
-game services, the production consent messages or the store age ratings are
-finalized — review both privacy pages before releasing that version.
+game services or the store age ratings are finalized, or the published AdMob
+privacy messages (European regulations and US state privacy) change — review
+both privacy pages before releasing that version.
 
 ## App icon
 
